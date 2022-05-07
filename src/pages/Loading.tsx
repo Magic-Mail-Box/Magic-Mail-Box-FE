@@ -1,17 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Header from 'ui/Common/Header';
-import Bottom from 'ui/Common/Bottom';
-import { MainButton } from 'ui/Main/MainContent';
-import { Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 
 const LoadingPage = () => {
-  const navigate = useNavigate();
-  const moveToWritePage = () => {
-    navigate('/write');
-  };
-
   return (
     <Container>
       <Header />

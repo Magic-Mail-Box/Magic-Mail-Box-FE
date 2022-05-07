@@ -10,6 +10,9 @@ const Header = () => {
   const moveToIntroPage = () => {
     navigate('/intro');
   };
+  const moveToFeedPage = () => {
+    navigate('/feed');
+  };
   return (
     <Container>
       <ContentLeft
@@ -27,7 +30,13 @@ const Header = () => {
         >
           마법의 우편함이란?
         </ContentRightNav>
-        <ContentRightNav>피드</ContentRightNav>
+        <ContentRightNav
+          onClick={() => {
+            moveToFeedPage();
+          }}
+        >
+          피드
+        </ContentRightNav>
       </ContentRight>
     </Container>
   );

@@ -1,8 +1,20 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Box, Stack } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const MainContent = () => {
+  const navigate = useNavigate();
+  const moveToWritePage = () => {
+    navigate('/write');
+  };
+  const moveToIntroPage = () => {
+    navigate('/intro');
+  };
+  const moveToFeedPage = () => {
+    navigate('/feed');
+  };
+
   return (
     <Container>
       <LogoWrapperDiv>
@@ -10,15 +22,35 @@ const MainContent = () => {
       </LogoWrapperDiv>
       <MainContentWrapper>
         <Box>
-          <Box mb={4}>
-            <p>고민이 있으신가요?</p>
-            <p>마법의 우편함에 조언을 얻어보세요!</p>
+          <Box my={6}>
+            <p>
+              고민이 있으신가요? <br />
+              마법의 우편함에 조언을 얻어보세요!
+            </p>
           </Box>
 
           <Stack spacing={2}>
-            <MainButton>시작하기</MainButton>
-            <SubButton>마법의 우편함이란?</SubButton>
-            <SubButton>피드</SubButton>
+            <MainButton
+              onClick={() => {
+                moveToWritePage();
+              }}
+            >
+              시작하기
+            </MainButton>
+            <SubButton
+              onClick={() => {
+                moveToIntroPage();
+              }}
+            >
+              마법의 우편함이란?
+            </SubButton>
+            <SubButton
+              onClick={() => {
+                moveToFeedPage();
+              }}
+            >
+              피드
+            </SubButton>
           </Stack>
         </Box>
         <MagicBoxWrapperDiv>
@@ -30,7 +62,7 @@ const MainContent = () => {
 };
 
 const Container = styled.div`
-  padding: 40px 360px 250px 360px;
+  padding: 40px 360px 220px 360px;
 `;
 
 const LogoWrapperDiv = styled.div`
@@ -54,6 +86,7 @@ const MagicBoxWrapperImg = styled.img`
   width: 100%;
 `;
 
+// Todo : 공통 버튼 컴포넌트 만들기
 export const MainButton = styled.button`
   background: #ff7a00;
   border-radius: 30px;
@@ -63,6 +96,7 @@ export const MainButton = styled.button`
   height: 48px;
   cursor: pointer;
 `;
+// Todo : 공통 버튼 컴포넌트 만들기
 const SubButton = styled.button`
   border: 1px solid #ff7a00;
   border-radius: 30px;

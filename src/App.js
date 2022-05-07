@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import FeedPage from 'pages/FeedPage';
 import IntroPage from 'pages/IntroPage';
 import LoadingPage from 'pages/Loading';
 import MainPage from 'pages/Main';
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/result" element={<Result />} />
         <Route path="/write" element={<WriteCard />} />
         <Route path="/loading" element={<LoadingPage />} />
+        <Route path="/feed" element={<FeedPage />} />
       </Routes>
     </Container>
   );
