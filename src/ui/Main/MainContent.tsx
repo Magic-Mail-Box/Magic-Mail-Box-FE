@@ -22,7 +22,7 @@ const MainContent = () => {
           </Stack>
         </Box>
         <MagicBoxWrapperDiv>
-          <MagicBoxWrapperImg alt="iPhone_01" src="/image/mainMagicbox.png" />
+          <MagicBoxWrapperImg alt="" src="/image/mainMagicbox.png" />
         </MagicBoxWrapperDiv>
       </MainContentWrapper>
     </Container>
