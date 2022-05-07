@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import ResultCard from '../ui/ResultCard/ResultCard';
+import Pallete from '../ui/Pallete/Pallete';
 
 const ResultPage = () => {
   return (
     <Container>
       <ResultCard bgColor="white" mainColor="black" />
+      <Pallete />
     </Container>
   );
 };

@@ -25,6 +25,9 @@ const Pallete = () => {
 };
 
 const Container = styled.div`
+  position: absolute;
+  right: -130px;
+  top: 0px;
   align-items: center;
   background-color: #f4f4f4;
   display: flex;

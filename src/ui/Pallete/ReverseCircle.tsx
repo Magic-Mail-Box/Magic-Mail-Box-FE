@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import ReversedImage from '../../asset/image/button_reverse.png';
 
 type CircleProps = {
   onClick: () => void;
 };
 
 const ReversedCircle = ({ onClick }: CircleProps) => {
-  return <Container onClick={onClick}>R</Container>;
+  return (
+    <Container onClick={onClick}>
+      <Image src={ReversedImage} />
+    </Container>
+  );
 };
 
 const Container = styled.div`
@@ -21,5 +26,7 @@ const Container = styled.div`
   align-items: center;
   cursor: pointer;
 `;
+
+const Image = styled.img``;
 
 export default ReversedCircle;
