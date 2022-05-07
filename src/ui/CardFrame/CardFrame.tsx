@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 
 type CardProps = {
   bgColor: string;
+  mainColor: string;
+  children: React.ReactChild;
 };
 
 type StyleProps = {
@@ -10,12 +12,10 @@ type StyleProps = {
   mainColor?: string;
 };
 
-const Card = ({ bgColor }: CardProps) => {
+const CardFrame = ({ bgColor, mainColor, children }: CardProps) => {
   return (
     <Container bgColor={bgColor}>
-      <LineContainer>
-        <UpperBox />
-      </LineContainer>
+      <LineContainer mainColor={mainColor}>{children}</LineContainer>
     </Container>
   );
 };
@@ -23,8 +23,9 @@ const Card = ({ bgColor }: CardProps) => {
 const Container = styled.div<StyleProps>`
   width: 100%;
   height: 100%;
-  padding: 25px;
+  padding: 20px;
   border-radius: 30px;
+  background-color: ${(props) => props.bgColor};
 `;
 
 const LineContainer = styled.div<StyleProps>`
@@ -32,14 +33,10 @@ const LineContainer = styled.div<StyleProps>`
   height: 100%;
   border: 1px solid ${(props) => props.mainColor};
   border-radius: 30px;
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 `;
 
-const UpperBox = styled.div``;
-
-const Input = styled.input``;
-
-const AdviceBox = styled.div``;
-
-const Advice = styled.div``;
-
-export default Card;
+export default CardFrame;
