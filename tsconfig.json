@@ -2,7 +2,14 @@
   "compilerOptions": {
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "ui/*": ["src/ui/*"],
+      "pages/*": ["src/pages/*"],
+      "utils/*": ["src/utils/*"],
+      "asset/*": ["src/asset/*"],
+      "recoil/*": ["src/recoil/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
