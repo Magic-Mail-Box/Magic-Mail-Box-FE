@@ -37,6 +37,7 @@ module.exports = {
     ],
     'jsx-a11y/no-noninteractive-element-interactions': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
+    'import/newline-after-import': ['error', { count: 1 }],
   },
   settings: {
     'import/resolver': {
