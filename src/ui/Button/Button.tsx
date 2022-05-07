@@ -13,11 +13,13 @@ const Button = ({ text }: ButtonProps) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.button`
   border: 1px solid #ff7a00;
   border-radius: 30px;
   padding: 12px 28px;
   width: fit-content;
+  background-color: transparent;
+  cursor: pointer;
 `;
 
 const Text = styled.div`

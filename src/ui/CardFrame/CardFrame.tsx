@@ -26,6 +26,7 @@ const Container = styled.div<StyleProps>`
   padding: 20px;
   border-radius: 30px;
   background-color: ${(props) => props.bgColor};
+  box-sizing: border-box;
 `;
 
 const LineContainer = styled.div<StyleProps>`
