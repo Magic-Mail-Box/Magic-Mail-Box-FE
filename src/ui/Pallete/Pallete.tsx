@@ -30,6 +30,7 @@ const Pallete = () => {
             mainColor={data.mainColor}
             bgColor={data.bgColor}
             onClick={() => setColor(data)}
+            active={data.type === color.type}
           />
         );
       })}
@@ -45,7 +46,7 @@ const Container = styled.div`
   background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   border-radius: 40px;
   gap: 20px;
   width: fit-content;

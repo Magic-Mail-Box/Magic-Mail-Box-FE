@@ -4,16 +4,18 @@ import styled from '@emotion/styled';
 type CircleProps = {
   bgColor: string;
   mainColor: string;
+  active: boolean;
   onClick: () => void;
 };
 
 type StyleProps = {
   bgColor: string;
+  active: boolean;
 };
 
-const Circle = ({ bgColor, mainColor, onClick }: CircleProps) => {
+const Circle = ({ bgColor, mainColor, active, onClick }: CircleProps) => {
   return (
-    <Container bgColor={bgColor} onClick={onClick}>
+    <Container bgColor={bgColor} onClick={onClick} active={active}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
         <g id="레이어_2" data-name="레이어 2">
           <g id="레이어_1-2" data-name="레이어 1">
@@ -33,7 +35,13 @@ const Container = styled.div<StyleProps>`
   height: 40px;
   border-radius: 50%;
   background-color: ${(props) => props.bgColor};
-  box-sizing: border-box;
+  box-sizing: content-box;
+  ${(props) =>
+    props.active &&
+    `
+  border: 5px solid #bababa;
+  `}
+
   cursor: pointer;
 `;
 
