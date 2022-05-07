@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { palletes, PalletesType } from './palletes';
+import { useSetRecoilState } from 'recoil';
+import { palletes } from './palletes';
+import { colorTheme } from '../../recoil/result';
 import Circle from './Circle';
 import ReversedCircle from './ReverseCircle';
 
 const Pallete = () => {
   const [isReversed, setIsReversed] = useState(false);
+  const setColor = useSetRecoilState(colorTheme);
   const pallete = isReversed ? palletes.reversed : palletes.normal;
 
   return (
@@ -17,6 +20,7 @@ const Pallete = () => {
             key={data.type}
             mainColor={data.mainColor}
             bgColor={data.bgColor}
+            onClick={() => setColor(data)}
           />
         );
       })}

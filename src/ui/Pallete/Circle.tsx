@@ -4,15 +4,16 @@ import styled from '@emotion/styled';
 type CircleProps = {
   bgColor: string;
   mainColor: string;
+  onClick: () => void;
 };
 
 type StyleProps = {
   bgColor: string;
 };
 
-const Circle = ({ bgColor, mainColor }: CircleProps) => {
+const Circle = ({ bgColor, mainColor, onClick }: CircleProps) => {
   return (
-    <Container bgColor={bgColor}>
+    <Container bgColor={bgColor} onClick={onClick}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
         <g id="레이어_2" data-name="레이어 2">
           <g id="레이어_1-2" data-name="레이어 1">
