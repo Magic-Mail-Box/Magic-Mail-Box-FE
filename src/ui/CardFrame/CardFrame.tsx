@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Input from '../Input/input';
 
 type CardProps = {
   bgColor: string;
   mainColor: string;
-  children: React.ReactElement;
+  children: React.ReactChild;
 };
 
 type StyleProps = {
