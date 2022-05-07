@@ -2,6 +2,10 @@
   font-family: 'universe';
   src: url('./asset/font/YUniverse-L.ttf');
 }
+@font-face {
+  font-family: 'universe-b';
+  src: url('./asset/font/YUniverse-B.ttf');
+}
 
 body {
   margin: 0;

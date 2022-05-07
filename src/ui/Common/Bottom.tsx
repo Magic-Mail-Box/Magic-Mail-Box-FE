@@ -6,7 +6,7 @@ const Bottom = () => {
     <Container>
       <div>
         <Logo>A Magic Mailbox</Logo>
-        <p>고민 중인 당신을 위한 조언 서비스, A Magic Mailbox</p>
+        <Desc>고민 중인 당신을 위한 조언 서비스, A Magic Mailbox</Desc>
       </div>
       <LinkButtonsGroup>
         <LinkButton>A Magic Mailbox</LinkButton>
@@ -31,11 +31,15 @@ const Container = styled.div`
   padding: 20px 0px;
   box-sizing: border-box;
   justify-content: space-around;
+  font-family: 'universe-b';
 `;
 const Logo = styled.p`
   font-size: 2rem;
   margin: 0 auto;
   text-align: center;
+`;
+const Desc = styled.p`
+  font-family: 'universe';
 `;
 
 const LinkButtonsGroup = styled.div`

@@ -12,7 +12,7 @@ const IntroPage = () => {
       <Box sx={{ padding: '40px 360px' }}>
         <Box my={8}>
           <IntroTitleTypo>마법의 우편함이란?</IntroTitleTypo>
-          <div>
+          <IntroDescTypo>
             마법의 우편함이란? 마법의 우편함이란? 마법의 우편함이란? 마법의
             우편함이란? 마법의 우편함이란? 마법의 우편함이란? 마법의 우편함이란?
             마법의 우편함이란? 마법의 우편함이란? 마법의 우편함이란? 마법의
@@ -27,7 +27,7 @@ const IntroPage = () => {
             우편함이란? 마법의 우편함이란? 마법의 우편함이란? 마법의 우편함이란?
             마법의 우편함이란? 마법의 우편함이란? 마법의 우편함이란? 마법의
             우편함이란? 마법의 우편함이란? 마법의 우편함이란?
-          </div>
+          </IntroDescTypo>
         </Box>
         <Box my={16}>
           <IntroTitleTypo>How to use</IntroTitleTypo>
@@ -57,4 +57,9 @@ const IntroImgs = styled.img`
 const IntroTitleTypo = styled.p`
   font-weight: bold;
   font-size: 1.2rem;
+  font-family: 'universe-b';
+`;
+
+const IntroDescTypo = styled.div`
+  text-align: start;
 `;
