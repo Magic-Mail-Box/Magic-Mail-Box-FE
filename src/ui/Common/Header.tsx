@@ -1,15 +1,26 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+  const moveToIntroPage = () => {
+    navigate('/intro');
+  };
   return (
     <Container>
       <ContentLeft>
         <p>A Magic Mailbox</p>
       </ContentLeft>
       <ContentRight>
-        <p>마법의 우편함이란?</p>
-        <p>피드</p>
+        <ContentRightNav
+          onClick={() => {
+            moveToIntroPage();
+          }}
+        >
+          마법의 우편함이란?
+        </ContentRightNav>
+        <ContentRightNav>피드</ContentRightNav>
       </ContentRight>
     </Container>
   );
@@ -33,9 +44,10 @@ const ContentRight = styled.div`
   display: flex;
   align-items: center;
   font-size: 1.2rem;
-  p {
-    margin: 0px;
-  }
+`;
+
+const ContentRightNav = styled.p`
+  margin: 0px;
 `;
 
 export default Header;

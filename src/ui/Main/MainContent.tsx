@@ -30,7 +30,7 @@ const MainContent = () => {
 };
 
 const Container = styled.div`
-  padding: 40px 360px 320px 360px;
+  padding: 40px 360px 250px 360px;
 `;
 
 const LogoWrapperDiv = styled.div`
@@ -54,7 +54,7 @@ const MagicBoxWrapperImg = styled.img`
   width: 100%;
 `;
 
-const MainButton = styled.button`
+export const MainButton = styled.button`
   background: #ff7a00;
   border-radius: 30px;
   border: none;

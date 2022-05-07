@@ -23,8 +23,6 @@ const Container = styled.div`
   width: 100vw;
   background: black;
   color: white;
-  position: fixed;
-  bottom: 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
