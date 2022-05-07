@@ -6,7 +6,7 @@ const MainContent = () => {
   return (
     <Container>
       <LogoWrapperDiv>
-        <img alt="iPhone_01" src="/image/mainlogo.png" />
+        <img alt="" src="/image/mainlogo.png" />
       </LogoWrapperDiv>
       <MainContentWrapper>
         <Box>

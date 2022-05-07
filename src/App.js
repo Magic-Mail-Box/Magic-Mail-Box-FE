@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import IntroPage from 'pages/IntroPage';
 import MainPage from 'pages/Main';
+import WriteCard from 'pages/WriteCard';
 import { Route, Routes } from 'react-router-dom';
 import Result from './pages/Result';
 
@@ -11,6 +12,7 @@ const App = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="/intro" element={<IntroPage />} />
         <Route path="/result" element={<Result />} />
+        <Route path="/write" element={<WriteCard />} />
       </Routes>
     </Container>
   );

@@ -2,10 +2,16 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Header from 'ui/Common/Header';
 import Bottom from 'ui/Common/Bottom';
-import MainContent, { MainButton } from 'ui/Main/MainContent';
-import { Box, Typography } from '@mui/material';
+import { MainButton } from 'ui/Main/MainContent';
+import { Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const IntroPage = () => {
+  const navigate = useNavigate();
+  const moveToWritePage = () => {
+    navigate('/write');
+  };
+
   return (
     <Container>
       <Header />
@@ -35,7 +41,13 @@ const IntroPage = () => {
             <IntroImgs alt="" src="/image/introCards.png" />
           </Box>
           <Box my={16}>
-            <MainButton>시작하기</MainButton>
+            <MainButton
+              onClick={() => {
+                moveToWritePage();
+              }}
+            >
+              시작하기
+            </MainButton>
           </Box>
         </Box>
       </Box>
