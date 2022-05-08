@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import copyUrlHelper from '../../utils/copyUrlHelper';
-import CopyIcon from '../../asset/image/copy_icon.png';
+import copyUrlHelper from 'utils/copyUrlHelper';
+import shareWithKakao from 'utils/shareWithKakao';
+import CopyIcon from 'asset/image/copy_icon.png';
 
 const ShareBox = () => {
   return (
     <Containter>
       <Text>공유하기</Text>
       <SnsBox>
-        <Image src={CopyIcon} onClick={copyUrlHelper} />
+        <Image
+          src={CopyIcon}
+          onClick={() => shareWithKakao('점심 뭐먹지', '이 또한 지나가리라')}
+        />
       </SnsBox>
     </Containter>
   );
