@@ -1,8 +1,6 @@
 import kakaoInitialize from 'utils/kakaoInitialize';
 
 const shareWithKakao = (question: string, advise: string) => {
-  kakaoInitialize();
-
   window.Kakao.Link.sendDefault({
     objectType: 'feed', // 메시지 형식 : 피드 타입
     content: {

@@ -7,7 +7,7 @@ import kakaoInitialize from 'utils/kakaoInitialize';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// kakaoInitialize();
+kakaoInitialize();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
