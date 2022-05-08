@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
+type StyleProps = {
+  isPathSame: boolean;
+};
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { pathname } = location;
+
   const moveToIntroMain = () => {
     navigate('/');
   };
@@ -23,20 +29,22 @@ const Header = () => {
         <p>A Magic Mailbox</p>
       </ContentLeft>
       <ContentRight>
-        <ContentRightNav
+        <ContentRightNavIntro
+          isPathSame={pathname === '/intro'}
           onClick={() => {
             moveToIntroPage();
           }}
         >
           마법의 우편함이란?
-        </ContentRightNav>
-        <ContentRightNav
+        </ContentRightNavIntro>
+        <ContentRightNavFeed
+          isPathSame={pathname === '/feed'}
           onClick={() => {
             moveToFeedPage();
           }}
         >
           피드
-        </ContentRightNav>
+        </ContentRightNavFeed>
       </ContentRight>
     </Container>
   );
@@ -64,9 +72,16 @@ const ContentRight = styled.div`
   font-size: 1.2rem;
 `;
 
-const ContentRightNav = styled.p`
+const ContentRightNavIntro = styled.p<StyleProps>`
   margin: 0px 10px;
   cursor: pointer;
+  color: ${(props) => (props.isPathSame ? '#ff7a00' : 'black')};
+`;
+
+const ContentRightNavFeed = styled.p<StyleProps>`
+  margin: 0px 10px;
+  cursor: pointer;
+  color: ${(props) => (props.isPathSame ? '#ff7a00' : 'black')};
 `;
 
 export default Header;
