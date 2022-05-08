@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Header from 'ui/Common/Header';
-import { Box } from '@mui/material';
+import { Box, Input } from '@mui/material';
 import BlinkIcon from 'ui/Common/BlinkIcon';
-import Input from 'ui/Input/input';
 
+type StyleProps = {
+  isContentExist: boolean;
+};
 const WriteCard = () => {
+  const [content, setContent] = useState('');
+
   return (
     <Container>
       <Header />
       <ContentBody>
         <CardWrapperBackground>
           <CardWrapperBorder>
-            {/* Todo : Box 삭제 , img삽입 */}
-
-            <Box my={16} sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Box sx={{ width: '130px', height: '130px', background: 'pink' }}>
-                <img src="" alt="" />
+            <Box my={10} sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Box sx={{ width: '180px', height: '180px' }}>
+                <MainPatternImg src="/image/core.png" alt="" />
               </Box>
             </Box>
 
@@ -31,8 +33,14 @@ const WriteCard = () => {
                 <br />이 엽서에 살짝 적어서 마법의 우편함에 넣어보세요. <br />
                 당신이 한걸음 더 나아갈 수 있는 멋진 답장이 돌아올지도 몰라요!
               </Box>
-              <Input color="black" />
-              <CardSubmitBtn>카드 보내기</CardSubmitBtn>
+              <Input
+                fullWidth
+                onChange={(e) => setContent(e.target.value)}
+                value={content}
+              />
+              <CardSubmitBtn isContentExist={content.length > 0}>
+                카드 보내기
+              </CardSubmitBtn>
             </WriteContentBox>
           </CardWrapperBorder>
         </CardWrapperBackground>
@@ -68,11 +76,16 @@ const CardWrapperBorder = styled.div`
   height: fill-available;
   border-radius: 20px;
 `;
+
+const MainPatternImg = styled.img`
+  width: 100%;
+`;
 const WriteContentBox = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+  padding: 0px 60px;
 `;
 
 const WriteCardTitle = styled.div`
@@ -89,11 +102,10 @@ const WriteCardTitle = styled.div`
   }
 `;
 
-const CardSubmitBtn = styled.div`
-  border: 1px solid #ff7a00;
+const CardSubmitBtn = styled.div<StyleProps>`
+  border: 1px solid ${(props) => (props.isContentExist ? '#ff7a00' : '#bababa')};
   border-radius: 30px;
-  background: #f4f4f4;
-  color: #ff7a00;
+  color: ${(props) => (props.isContentExist ? '#ff7a00' : '#bababa')};
   width: 150px;
   height: 48px;
   cursor: pointer;
