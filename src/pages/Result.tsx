@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { useRecoilValue } from 'recoil';
 
@@ -7,9 +7,14 @@ import ResultCard from '../ui/ResultCard/ResultCard';
 import Button from '../ui/Button/Button';
 import Pallete from '../ui/Pallete/Pallete';
 import { colorTheme } from '../recoil/result';
+import kakaoInitialize from '../utils/kakaoInitialize';
 
 const ResultPage = () => {
   const color = useRecoilValue(colorTheme);
+
+  useEffect(() => {
+    kakaoInitialize();
+  }, []);
 
   return (
     <Container>

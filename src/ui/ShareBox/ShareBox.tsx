@@ -21,8 +21,8 @@ const Containter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 160px;
   flex-direction: column;
+  height: 160px;
 `;
 
 const Text = styled.div`
