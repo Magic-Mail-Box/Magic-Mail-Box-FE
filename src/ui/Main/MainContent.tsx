@@ -62,7 +62,7 @@ const MainContent = () => {
 };
 
 const Container = styled.div`
-  padding: 40px 360px 220px 360px;
+  padding: 40px 360px 0px 360px;
 `;
 
 const LogoWrapperDiv = styled.div`
@@ -76,14 +76,10 @@ const MainContentWrapper = styled.div`
   justify-content: space-between;
   font-weight: bold;
 `;
-const MagicBoxWrapperDiv = styled.div`
-  position: absolute;
-  right: 360px;
-  bottom: 200px;
-  width: 700px;
-`;
+const MagicBoxWrapperDiv = styled.div``;
 const MagicBoxWrapperImg = styled.img`
-  width: 100%;
+  width: 85%;
+  height: 100%;
 `;
 
 // Todo : 공통 버튼 컴포넌트 만들기
