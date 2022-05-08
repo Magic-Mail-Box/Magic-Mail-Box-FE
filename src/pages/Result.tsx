@@ -18,8 +18,11 @@ const ResultPage = () => {
       <ResultCard bgColor={color.bgColor} mainColor={color.mainColor} />
       <Pallete />
       <ButtonBox>
-        <Button text="다시 보내기" />
-        <Button text="이미지 저장하기" />
+        <Button text="다시 보내기" onClick={() => console.log('다시 보내기')} />
+        <Button
+          text="이미지 저장하기"
+          onClick={() => console.log('이미지 저장하기')}
+        />
       </ButtonBox>
       <ShareBox />
       <Box mt={3} />

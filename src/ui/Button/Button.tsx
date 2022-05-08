@@ -3,11 +3,19 @@ import styled from '@emotion/styled';
 
 type ButtonProps = {
   text: string;
+  onClick: () => void;
 };
 
-const Button = ({ text }: ButtonProps) => {
+const Button = ({ text, onClick }: ButtonProps) => {
+  const handleOnClick = () => {
+    if (!onClick) {
+      return;
+    }
+    onClick();
+  };
+
   return (
-    <Container>
+    <Container onClick={handleOnClick}>
       <Text>{text}</Text>
     </Container>
   );
