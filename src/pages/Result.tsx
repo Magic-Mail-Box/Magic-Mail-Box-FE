@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { useRecoilValue } from 'recoil';
+import { Box } from '@mui/material';
 
-import ShareBox from '../ui/ShareBox/ShareBox';
+import ShareBox from 'ui/ShareBox/ShareBox';
+import EvaluateBox from 'ui/EvaluateBox/EvaluateBox';
 import ResultCard from '../ui/ResultCard/ResultCard';
 import Button from '../ui/Button/Button';
 import Pallete from '../ui/Pallete/Pallete';
@@ -20,6 +22,8 @@ const ResultPage = () => {
         <Button text="이미지 저장하기" />
       </ButtonBox>
       <ShareBox />
+      <Box mt={3} />
+      <EvaluateBox />
     </Container>
   );
 };
