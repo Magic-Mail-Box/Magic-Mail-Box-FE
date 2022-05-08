@@ -12,10 +12,6 @@ import kakaoInitialize from '../utils/kakaoInitialize';
 const ResultPage = () => {
   const color = useRecoilValue(colorTheme);
 
-  useEffect(() => {
-    kakaoInitialize();
-  }, []);
-
   return (
     <Container>
       <ResultCard bgColor={color.bgColor} mainColor={color.mainColor} />
