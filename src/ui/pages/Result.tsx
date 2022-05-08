@@ -2,16 +2,23 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useRecoilValue } from 'recoil';
 
+import { content } from 'recoil/content';
 import { Button } from 'ui/atoms';
 import { ResultCard, Pallete, ShareBox } from 'ui/molecules';
 import { colorTheme } from '../../recoil/result';
 
 const ResultPage = () => {
   const color = useRecoilValue(colorTheme);
+  const magicContent = useRecoilValue(content);
 
   return (
     <Container>
-      <ResultCard bgColor={color.bgColor} mainColor={color.mainColor} />
+      <ResultCard
+        bgColor={color.bgColor}
+        mainColor={color.mainColor}
+        question={magicContent.question}
+        advice={magicContent.advice}
+      />
       <Pallete />
       <ButtonBox>
         <Button text="다시 보내기" />

@@ -6,6 +6,8 @@ import { ReactComponent as Pattern } from 'asset/image/pattern.svg';
 type ResultCardProps = {
   bgColor: string;
   mainColor: string;
+  question: string;
+  advice: string;
 };
 
 type StyleProps = {
@@ -13,16 +15,21 @@ type StyleProps = {
   mainColor?: string;
 };
 
-const ResultCard = ({ bgColor, mainColor }: ResultCardProps) => {
+const ResultCard = ({
+  bgColor,
+  mainColor,
+  question,
+  advice,
+}: ResultCardProps) => {
   return (
     <CardFrame bgColor={bgColor} mainColor={mainColor}>
       <>
         <UpperBox>
           <Pattern fill={mainColor} />
-          <Input color={mainColor} />
+          <Input color={mainColor} defaultValue={question} />
         </UpperBox>
         <AdviceBox mainColor={mainColor}>
-          <Advice bgColor={bgColor}>그로 인해 좋은 일이 일어날지도...</Advice>
+          <Advice bgColor={bgColor}>{advice}</Advice>
         </AdviceBox>
       </>
     </CardFrame>

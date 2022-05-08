@@ -3,10 +3,11 @@ import styled from '@emotion/styled';
 
 type InputProps = {
   color: string;
+  defaultValue: string;
 };
 
-const Input = ({ color }: InputProps) => {
-  return <InputBox color={color} />;
+const Input = ({ color, defaultValue }: InputProps) => {
+  return <InputBox color={color} defaultValue={defaultValue} />;
 };
 
 export default Input;
