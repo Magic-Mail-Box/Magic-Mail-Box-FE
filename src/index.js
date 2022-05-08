@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import './index.css';
+import kakaoInitialize from 'utils/kakaoInitialize';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+kakaoInitialize();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
