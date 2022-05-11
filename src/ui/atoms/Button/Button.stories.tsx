@@ -2,15 +2,15 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import styled from '@emotion/styled';
-import CardFrame from './CardFrame';
+import { Button } from './Button';
 
 export default {
-  title: 'UI/CardFrame',
-  component: CardFrame,
+  title: 'UI/Button',
+  component: Button,
   parameters: {
     docs: {
       description: {
-        component: 'CardFrame 컴포넌트',
+        component: 'Button 컴포넌트',
       },
     },
   },
@@ -24,15 +24,24 @@ export default {
       control: { type: 'action' },
     },
   },
-} as ComponentMeta<typeof CardFrame>;
-const Template: ComponentStory<typeof CardFrame> = (args) => {
+} as ComponentMeta<typeof Button>;
+const Template: ComponentStory<typeof Button> = (args) => {
   return (
     <Container>
-      <CardFrame {...args} />
+      <Button {...args} />
     </Container>
   );
 };
+
 export const DefaultButton = Template.bind({});
+DefaultButton.args = {
+  text: '입장하기',
+};
+
+export const DefaultButton1 = Template.bind({});
+DefaultButton1.args = {
+  text: '테스트',
+};
 
 const Container = styled.div`
   width: 500px;

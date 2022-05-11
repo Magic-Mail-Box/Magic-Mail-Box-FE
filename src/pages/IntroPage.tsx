@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Header from 'ui/Common/Header';
 import Bottom from 'ui/Common/Bottom';
-import { MainButton } from 'ui/Main/MainContent';
+import { Button } from 'ui/atoms';
 import { Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
@@ -41,13 +41,12 @@ const IntroPage = () => {
             <IntroImgs alt="" src="/image/introCards.png" />
           </Box>
           <Box my={16}>
-            <MainButton
+            <Button
+              text="시작하기"
               onClick={() => {
                 moveToWritePage();
               }}
-            >
-              시작하기
-            </MainButton>
+            />
           </Box>
         </Box>
       </Box>

@@ -2,9 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useRecoilValue } from 'recoil';
 
+import { Button } from 'ui/atoms';
 import ShareBox from '../ui/ShareBox/ShareBox';
 import ResultCard from '../ui/ResultCard/ResultCard';
-import Button from '../ui/Button/Button';
 import Pallete from '../ui/Pallete/Pallete';
 import { colorTheme } from '../recoil/result';
 

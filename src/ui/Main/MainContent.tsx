@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Box, Stack } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { Button } from 'ui/atoms';
 
 const MainContent = () => {
   const navigate = useNavigate();
@@ -30,27 +31,24 @@ const MainContent = () => {
           </Box>
 
           <Stack spacing={2}>
-            <MainButton
+            <Button
+              text="시작하기"
               onClick={() => {
                 moveToWritePage();
               }}
-            >
-              시작하기
-            </MainButton>
-            <SubButton
+            />
+            <Button
+              text="마법의 우편함이란?"
               onClick={() => {
                 moveToIntroPage();
               }}
-            >
-              마법의 우편함이란?
-            </SubButton>
-            <SubButton
+            />
+            <Button
+              text="피드"
               onClick={() => {
                 moveToFeedPage();
               }}
-            >
-              피드
-            </SubButton>
+            />
           </Stack>
         </Box>
         <MagicBoxWrapperDiv>
@@ -82,24 +80,4 @@ const MagicBoxWrapperImg = styled.img`
   height: 100%;
 `;
 
-// Todo : 공통 버튼 컴포넌트 만들기
-export const MainButton = styled.button`
-  background: #ff7a00;
-  border-radius: 30px;
-  border: none;
-  color: #f4f4f4;
-  width: 200px;
-  height: 48px;
-  cursor: pointer;
-`;
-// Todo : 공통 버튼 컴포넌트 만들기
-const SubButton = styled.button`
-  border: 1px solid #ff7a00;
-  border-radius: 30px;
-  background: #f4f4f4;
-  color: #ff7a00;
-  width: 200px;
-  height: 48px;
-  cursor: pointer;
-`;
 export default MainContent;

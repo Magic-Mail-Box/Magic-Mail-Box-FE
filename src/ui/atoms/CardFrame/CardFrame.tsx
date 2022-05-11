@@ -40,4 +40,4 @@ const LineContainer = styled.div<StyleProps>`
   overflow: hidden;
 `;
 
-export default CardFrame;
+export { CardFrame };

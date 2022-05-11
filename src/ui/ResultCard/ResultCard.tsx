@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { CardFrame } from 'ui/atoms';
 import { ReactComponent as Pattern } from '../../asset/image/pattern.svg';
-import CardFrame from '../CardFrame/CardFrame';
 import Input from '../Input/input';
 
 type ResultCardProps = {
