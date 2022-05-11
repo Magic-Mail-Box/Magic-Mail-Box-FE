@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import FeedPage from 'pages/FeedPage';
-import IntroPage from 'pages/IntroPage';
-import LoadingPage from 'pages/Loading';
-import MainPage from 'pages/Main';
-import WriteCard from 'pages/WriteCard';
+import FeedPage from 'ui/pages/FeedPage';
+import IntroPage from 'ui/pages/IntroPage';
+import LoadingPage from 'ui/pages/Loading';
+import MainPage from 'ui/pages/Main';
+import WriteCard from 'ui/pages/WriteCard';
 import { Route, Routes } from 'react-router-dom';
-import Result from './pages/Result';
+import Result from './ui/pages/Result';
 
 const App = () => {
   return (
