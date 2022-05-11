@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 type CardProps = {
   bgColor: string;
   mainColor: string;
-  children: React.ReactChild;
+  children: React.ReactNode;
 };
 
 type StyleProps = {

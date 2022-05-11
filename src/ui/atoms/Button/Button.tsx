@@ -4,10 +4,15 @@ import styled from '@emotion/styled';
 
 type ButtonProps = {
   text: string;
+  full?: boolean;
   onClick?: () => void;
 };
 
-const Button = ({ text, onClick }: ButtonProps) => {
+type StyleProps = {
+  full?: boolean;
+};
+
+const Button = ({ text, full, onClick }: ButtonProps) => {
   const handleOnClick = () => {
     if (!onClick) {
       return;
@@ -15,14 +20,18 @@ const Button = ({ text, onClick }: ButtonProps) => {
     onClick();
   };
 
-  return <Container onClick={handleOnClick}>{text}</Container>;
+  return (
+    <Container onClick={handleOnClick} full={full}>
+      {text}
+    </Container>
+  );
 };
 
-const Container = styled.button`
+const Container = styled.button<StyleProps>`
   border: 1px solid #ff7a00;
   border-radius: 30px;
   padding: 12px 28px;
-  width: fit-content;
+  width: ${(props) => (props.full ? '100%' : 'fit-content')};
   background-color: transparent;
   cursor: pointer;
   color: #ff7a00;
