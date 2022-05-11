@@ -33,34 +33,40 @@ const MainContent = () => {
           <Stack spacing={2}>
             <Button
               text="시작하기"
+              full
               onClick={() => {
                 moveToWritePage();
               }}
             />
             <Button
               text="마법의 우편함이란?"
+              full
               onClick={() => {
                 moveToIntroPage();
               }}
             />
             <Button
               text="피드"
+              full
               onClick={() => {
                 moveToFeedPage();
               }}
             />
           </Stack>
         </Box>
-        <MagicBoxWrapperDiv>
-          <MagicBoxWrapperImg alt="" src="/image/mainMagicbox.png" />
-        </MagicBoxWrapperDiv>
+
+        <MagicBoxWrapperImg alt="" src="/image/mainMagicbox.png" />
       </MainContentWrapper>
     </Container>
   );
 };
 
 const Container = styled.div`
-  padding: 40px 360px 0px 360px;
+  padding-top: 30px;
+  width: 70vw;
+  height: 80vh;
+  margin: 0 auto;
+  position: relative;
 `;
 
 const LogoWrapperDiv = styled.div`
@@ -74,10 +80,12 @@ const MainContentWrapper = styled.div`
   justify-content: space-between;
   font-weight: bold;
 `;
-const MagicBoxWrapperDiv = styled.div``;
+
 const MagicBoxWrapperImg = styled.img`
-  width: 85%;
-  height: 100%;
+  width: 45vw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 `;
 
 export { MainContent };

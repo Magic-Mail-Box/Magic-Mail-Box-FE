@@ -15,7 +15,6 @@ const LoadingPage = () => {
 
 export default LoadingPage;
 const Container = styled.div`
-  background: #f4f4f4;
   text-align: center;
   height: 100vh;
 `;

@@ -21,45 +21,54 @@ const Header = () => {
   };
   return (
     <Container>
-      <ContentLeft
-        onClick={() => {
-          moveToIntroMain();
-        }}
-      >
-        <p>A Magic Mailbox</p>
-      </ContentLeft>
-      <ContentRight>
-        <ContentRightNavIntro
-          isPathSame={pathname === '/intro'}
+      <Wrapper>
+        <ContentLeft
           onClick={() => {
-            moveToIntroPage();
+            moveToIntroMain();
           }}
         >
-          마법의 우편함이란?
-        </ContentRightNavIntro>
-        <ContentRightNavFeed
-          isPathSame={pathname === '/feed'}
-          onClick={() => {
-            moveToFeedPage();
-          }}
-        >
-          피드
-        </ContentRightNavFeed>
-      </ContentRight>
+          <p>A Magic Mailbox</p>
+        </ContentLeft>
+        <ContentRight>
+          <ContentRightNavIntro
+            isPathSame={pathname === '/intro'}
+            onClick={() => {
+              moveToIntroPage();
+            }}
+          >
+            마법의 우편함이란?
+          </ContentRightNavIntro>
+          <ContentRightNavFeed
+            isPathSame={pathname === '/feed'}
+            onClick={() => {
+              moveToFeedPage();
+            }}
+          >
+            피드
+          </ContentRightNavFeed>
+        </ContentRight>
+      </Wrapper>
     </Container>
   );
 };
 
 const Container = styled.div`
   border-bottom: 1px solid black;
+`;
+
+const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 10px 360px;
   font-weight: bold;
   font-family: 'universe-b';
+  width: 70vw;
+  height: 80px;
+  margin: 0 auto;
 `;
 
 const ContentLeft = styled.div`
+  display: flex;
+  align-items: center;
   p {
     font-size: 2rem;
     margin: 0px;
