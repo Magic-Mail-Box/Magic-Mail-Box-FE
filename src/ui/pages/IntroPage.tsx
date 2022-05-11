@@ -57,7 +57,7 @@ const IntroPage = () => {
 
 export default IntroPage;
 const Container = styled.div`
-  background: #f4f4f4;
+  background: black;
   text-align: center;
 `;
 

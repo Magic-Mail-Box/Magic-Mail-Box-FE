@@ -52,7 +52,6 @@ const WriteCard = () => {
 
 export default WriteCard;
 const Container = styled.div`
-  background: #f4f4f4;
   text-align: center;
 `;
 

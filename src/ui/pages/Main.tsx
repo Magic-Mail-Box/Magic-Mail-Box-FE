@@ -16,6 +16,5 @@ const MainPage = () => {
 
 export default MainPage;
 const Container = styled.div`
-  background: #f4f4f4;
   height: 100vh;
 `;
