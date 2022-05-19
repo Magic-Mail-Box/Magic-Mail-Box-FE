@@ -6,6 +6,7 @@ import { Button } from 'ui/atoms';
 
 const MainContent = () => {
   const navigate = useNavigate();
+
   const moveToWritePage = () => {
     navigate('/write');
   };

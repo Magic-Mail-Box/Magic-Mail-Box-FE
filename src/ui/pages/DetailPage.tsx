@@ -4,15 +4,31 @@ import { useRecoilValue } from 'recoil';
 
 import { content } from 'recoil/content';
 import { Button } from 'ui/atoms';
-import { ResultCard, Pallete, ShareBox } from 'ui/molecules';
+import { ResultCard } from 'ui/molecules';
+import { useNavigate } from 'react-router-dom';
+import { Box } from '@mui/material';
 import { colorTheme } from '../../recoil/result';
 
-const ResultPage = () => {
+const DetailPage = () => {
+  const navigate = useNavigate();
   const color = useRecoilValue(colorTheme);
   const magicContent = useRecoilValue(content);
 
+  const moveToMainPage = () => {
+    navigate('/');
+  };
+
   return (
     <Container>
+      <Box px={20} py={5}>
+        <Button
+          text="목록으로 돌아가기"
+          full
+          onClick={() => {
+            moveToMainPage();
+          }}
+        />
+      </Box>
       <ResultCard
         bgColor={color.bgColor}
         mainColor={color.mainColor}
@@ -22,22 +38,17 @@ const ResultPage = () => {
         height="100%"
         padding="20px"
       />
-      <Pallete />
-      <ButtonBox>
-        <Button text="다시 보내기" />
-        <Button text="이미지 저장하기" />
-      </ButtonBox>
-      <ShareBox />
     </Container>
   );
 };
 
-export default ResultPage;
+export default DetailPage;
 
 const Container = styled.div`
   width: 512px;
   margin: 0 auto;
   position: relative;
+  margin-bottom: 50px;
 `;
 
 const ButtonBox = styled.div`

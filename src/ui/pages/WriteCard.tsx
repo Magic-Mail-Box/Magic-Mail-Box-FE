@@ -2,18 +2,34 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
 import { Box, Input } from '@mui/material';
-import { Header } from 'ui/molecules';
 import { BlinkIcon } from 'ui/atoms';
+import http from 'service/http';
+import { useNavigate } from 'react-router-dom';
 
 type StyleProps = {
   isContentExist: boolean;
 };
 const WriteCard = () => {
   const [content, setContent] = useState('');
+  const navigate = useNavigate();
+
+  const onSubmitQuestion = (question: string) => {
+    if (question.length > 0) {
+      http
+        .post('/card/make', {
+          question,
+        })
+        .then((res) => {
+          navigate('/loading');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
 
   return (
     <Container>
-      <Header />
       <ContentBody>
         <CardWrapperBackground>
           <CardWrapperBorder>
@@ -35,11 +51,15 @@ const WriteCard = () => {
                 당신이 한걸음 더 나아갈 수 있는 멋진 답장이 돌아올지도 몰라요!
               </Box>
               <Input
+                inputProps={{ maxLength: 30 }}
                 fullWidth
                 onChange={(e) => setContent(e.target.value)}
                 value={content}
               />
-              <CardSubmitBtn isContentExist={content.length > 0}>
+              <CardSubmitBtn
+                isContentExist={content.length > 0}
+                onClick={() => onSubmitQuestion(content)}
+              >
                 카드 보내기
               </CardSubmitBtn>
             </WriteContentBox>

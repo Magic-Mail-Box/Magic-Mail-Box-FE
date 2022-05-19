@@ -8,6 +8,9 @@ type ResultCardProps = {
   mainColor: string;
   question: string;
   advice: string;
+  width: string;
+  height: string;
+  padding: string;
 };
 
 type StyleProps = {
@@ -20,9 +23,18 @@ const ResultCard = ({
   mainColor,
   question,
   advice,
+  width,
+  height,
+  padding,
 }: ResultCardProps) => {
   return (
-    <CardFrame bgColor={bgColor} mainColor={mainColor}>
+    <CardFrame
+      bgColor={bgColor}
+      mainColor={mainColor}
+      width={width}
+      height={height}
+      padding={padding}
+    >
       <>
         <UpperBox>
           <Pattern fill={mainColor} />
