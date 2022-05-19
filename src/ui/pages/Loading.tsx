@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
-import { Header } from 'ui/molecules';
+import { useNavigate } from 'react-router-dom';
 
 const LoadingPage = () => {
+  const navigate = useNavigate();
+
+  const moveToResultPage = () => {
+    navigate('/result');
+  };
+
+  useEffect(() => {
+    setTimeout(function () {
+      moveToResultPage();
+    }, 2000);
+  }, []);
+
   return (
-    <Container>
-      <Header />
+    <Container
+      onClick={() => {
+        moveToResultPage();
+      }}
+    >
       <LoadingImgWrapper>
         <LoadingImg alt="loading" src="/image/loading.png" />
       </LoadingImgWrapper>

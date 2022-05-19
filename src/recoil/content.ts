@@ -2,6 +2,7 @@ import React from 'react';
 import { atom } from 'recoil';
 
 // NOTE : 너무 제네럴한 이름이라 고민이네요.. 더 좋은 이름이 있다면,, 제안 부탁드립니다!
+// problemAndSolving?
 
 export const content = atom({
   key: 'content', // unique ID (with respect to other atoms/selectors)

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { Button } from 'ui/atoms';
-import { Footer, Header } from 'ui/molecules';
+import { Footer } from 'ui/molecules';
 import { Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,7 +14,6 @@ const IntroPage = () => {
 
   return (
     <Container>
-      <Header />
       <Box sx={{ padding: '40px 360px' }}>
         <Box my={8}>
           <IntroTitleTypo>마법의 우편함이란?</IntroTitleTypo>
@@ -57,7 +56,6 @@ const IntroPage = () => {
 
 export default IntroPage;
 const Container = styled.div`
-  background: black;
   text-align: center;
 `;
 
